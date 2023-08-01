@@ -136,4 +136,4 @@ The best model for the adjusted r-squared is 0.8482.
 
 ## Final Summary Statements
 
-The best model of the three fish is pike (0.9649).
+Among the best model of the three fish is pike (0.9649).
