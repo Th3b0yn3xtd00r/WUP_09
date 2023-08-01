@@ -57,7 +57,7 @@ perchModel=lm(Weight~Height+Width,data=perch)
 summary(perchModel)
 ```
 
-The best model for the adjusted r-squared is 0.94
+The best model for the adjusted r-squared is 0.94.
 
 ## Pike
 ```{r}
