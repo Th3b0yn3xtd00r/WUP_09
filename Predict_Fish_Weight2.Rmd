@@ -98,9 +98,42 @@ The best model for the adjusted r-squared is 0.9649.
 
 ## Roach
 
+```{r}
+Roach = filter(fishData, Species == "Roach")
+```
+
 ### Best Models
+
+```{r}
+models = regsubsets(Weight ~ Length1+Length2+Length3+Height+Width, data=Roach,
+                    nvmax=5)
+
+summary(models)
+
+res.sum <- summary(models)
+Adj.R2 = which.max(res.sum$adjr2)
+print(paste("best adjusted r-squared", Adj.R2))
+
+results = data.frame(
+  Adj.R2 = which.max(res.sum$adjr2),
+  CP = which.min(res.sum$cp),
+  BIC = which.min(res.sum$bic)
+)
+print(results)
+
+```
+
+The best two variables for Roach is Length 3 and Width.
 
 ### Best Two regressor model
 
+```{r}
+RoachModel=lm(Weight~Length3+Width,data=Roach)
+summary(RoachModel)
+```
+
+The best model for the adjusted r-squared is 0.8482.
+
 ## Final Summary Statements
+
 
